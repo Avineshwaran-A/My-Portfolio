@@ -1,0 +1,68 @@
+[
+  {
+    "id": "rit-education",
+    "date": "2023-07-01",
+    "type": "Education",
+    "icon": "GraduationCap",
+    "title": "Rajalakshmi Institute of Technology",
+    "description": "B.E. Computer Science & Engineering — currently enrolled. Core modules: OS, DBMS, DAA, CN, Cyber Security.",
+    "status": "active",
+    "severity": "info",
+    "order": 1
+  },
+  {
+    "id": "linux-sysadmin-cert",
+    "date": "2024-06-10",
+    "type": "Certification",
+    "icon": "BadgeCheck",
+    "title": "Linux SysAdmin Certification",
+    "description": "Self-directed study: LPIC-1 modules, chmod/ACL deep-dive, systemd service authoring. Permission hardening & job scheduling proficiency logged.",
+    "status": "completed",
+    "severity": "info",
+    "order": 2
+  },
+  {
+    "id": "hack-hustle",
+    "date": "2024-09-15",
+    "type": "Achievement",
+    "icon": "Zap",
+    "title": "Hack Hustle 2.0 — Lead Developer",
+    "description": "Architected a distributed task-management solution under 48-hour constraint. Tech stack: Python, FastAPI, WebSockets, Redis pub/sub.",
+    "status": "completed",
+    "severity": "warn",
+    "order": 3
+  },
+  {
+    "id": "threat-sim-project",
+    "date": "2025-03-20",
+    "type": "Project",
+    "icon": "Shield",
+    "title": "Cybersec Threat Sim — Deployed to Staging",
+    "description": "Telegram Bot integration tested against mock production DB. Recovery logic validated: 99.4% rollback success rate under adversarial load.",
+    "status": "completed",
+    "severity": "warn",
+    "order": 4
+  },
+  {
+    "id": "hybridshield-deploy",
+    "date": "2025-11-05",
+    "type": "Project",
+    "icon": "ShieldCheck",
+    "title": "HybridShield EDR Engine — Online",
+    "description": "YARA rule set loaded (47 rules). ClamAV daemon: UP. Entropy threshold: 7.2 bits/byte. Realtime inotify watcher active.",
+    "status": "active",
+    "severity": "alert",
+    "order": 5
+  },
+  {
+    "id": "resource-alloc-project",
+    "date": "2026-02-14",
+    "type": "Project",
+    "icon": "Cpu",
+    "title": "Smart Resource Alloc — ML Model Complete",
+    "description": "Model: GradientBoosting regressor. Scheduler modes: RR, Priority, SJF. DAA layer: Greedy + Memoised DP. Avg wait-time reduction: 31%.",
+    "status": "active",
+    "severity": "info",
+    "order": 6
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "cybersec-threat-sim",
+    "pid": "0xDEAD",
+    "title": "Cybersecurity Threat Simulation System",
+    "shortTitle": "Threat Sim",
+    "status": "running",
+    "order": 1,
+    "description": "Simulates active database compromise scenarios (insertion / deletion threats) via a Telegram Bot interface. Implements real-time DB recovery logic, rollback transaction chains, and alert propagation. Designed to stress-test incident-response pipelines and validate backup integrity under adversarial conditions.",
+    "stack": ["Python", "Telegram Bot API", "SQLite3", "Threat Modelling"],
+    "repoUrl": null,
+    "demoUrl": null,
+    "imageAlt": "Terminal output showing live threat simulation — red alert lines scrolling"
+  },
+  {
+    "id": "smart-resource-alloc",
+    "pid": "0xC0DE",
+    "title": "Smart Resource Allocation Framework",
+    "shortTitle": "Resource Alloc",
+    "status": "running",
+    "order": 2,
+    "description": "Integrates ML-driven workload prediction with OS scheduling primitives (Round Robin, Priority Scheduling) and DAA algorithms (Greedy, DP) to dynamically distribute CPU/memory across competing processes. Reduces average wait-time by prioritizing predicted high-burst tasks before queue saturation.",
+    "stack": ["C", "Python", "scikit-learn", "OS Scheduling", "DAA"],
+    "repoUrl": null,
+    "demoUrl": null,
+    "imageAlt": "Server rack internals showing resource allocation metrics"
+  },
+  {
+    "id": "threat-detection-system",
+    "pid": "0xH1B5",
+    "title": "HybridShield — Endpoint Threat Detection",
+    "shortTitle": "HybridShield",
+    "status": "active",
+    "order": 3,
+    "description": "Fully offline Linux EDR combining ClamAV signature scanning, YARA rule matching, and Shannon entropy heuristics. Features real-time inotify file-watching, multi-threaded analysis pipeline, auto-quarantine with permission stripping, and a live Rich TUI dashboard for operator situational awareness.",
+    "stack": ["Python", "ClamAV", "YARA", "inotify", "Rich TUI"],
+    "repoUrl": "https://github.com/Avineshwaran-A/Threat-Detection-System",
+    "demoUrl": null,
+    "imageAlt": "Dark terminal with real-time threat analysis logs"
+  }
+]

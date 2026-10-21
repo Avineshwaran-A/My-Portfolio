@@ -1,0 +1,32 @@
+{
+  "links": [
+    {
+      "platform": "GitHub",
+      "icon": "Github",
+      "url": "https://github.com/Avineshwaran-A",
+      "label": "View GitHub Profile",
+      "color": "violet"
+    },
+    {
+      "platform": "LinkedIn",
+      "icon": "Linkedin",
+      "url": "https://linkedin.com/in/YOUR_LINKEDIN_USERNAME",
+      "label": "Connect on LinkedIn",
+      "color": "cyan",
+      "note": "TODO: Replace YOUR_LINKEDIN_USERNAME with your actual LinkedIn username before going live"
+    },
+    {
+      "platform": "Email",
+      "icon": "Mail",
+      "url": "mailto:your.email@example.com",
+      "label": "Send an Email",
+      "color": "magenta",
+      "note": "TODO: Replace your.email@example.com with your actual email address before going live"
+    }
+  ],
+  "navLinks": [
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Timeline", "href": "#timeline" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}

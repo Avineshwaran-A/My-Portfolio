@@ -1,0 +1,44 @@
+[
+  {
+    "id": "html-css",
+    "category": "HTML/CSS",
+    "tag": "WEB",
+    "icon": "Code2",
+    "color": "violet",
+    "order": 1,
+    "proficiency": 85,
+    "entries": [
+      { "name": "Semantic HTML", "detail": "Accessible page structure, forms, and modern HTML5 elements" },
+      { "name": "Responsive Layouts", "detail": "Flexbox, Grid, and mobile-first CSS for clean adaptive UIs" },
+      { "name": "Styling & Design", "detail": "Custom properties, animations, and polished visual details" }
+    ]
+  },
+  {
+    "id": "sql",
+    "category": "SQL",
+    "tag": "DATA",
+    "icon": "Terminal",
+    "color": "cyan",
+    "order": 2,
+    "proficiency": 80,
+    "entries": [
+      { "name": "Queries", "detail": "SELECT, JOIN, GROUP BY, and filtering for real data retrieval" },
+      { "name": "Schema Design", "detail": "Tables, keys, and relationships for structured databases" },
+      { "name": "Data Operations", "detail": "INSERT, UPDATE, DELETE, and basic data integrity practices" }
+    ]
+  },
+  {
+    "id": "python",
+    "category": "Python",
+    "tag": "CODE",
+    "icon": "Cpu",
+    "color": "magenta",
+    "order": 3,
+    "proficiency": 82,
+    "entries": [
+      { "name": "Core Python", "detail": "Scripts, functions, data structures, and clean problem-solving" },
+      { "name": "Automation", "detail": "File handling, APIs, and everyday scripting tasks" },
+      { "name": "Data Basics", "detail": "Working with lists, dicts, and simple data processing workflows" }
+    ]
+  }
+]
