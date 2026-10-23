@@ -269,7 +269,7 @@ export function Contact({ social }: { social: SocialData }) {
                   target={link.platform !== 'Email' ? '_blank' : undefined}
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="flex items-center gap-4 p-4 rounded-lg nature-panel group"
+                  className="flex items-center justify-between gap-4 p-4 rounded-lg nature-panel group"
                   initial={{ opacity: 0, y: 14 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -280,14 +280,6 @@ export function Contact({ social }: { social: SocialData }) {
                   }}
                   whileTap={{ scale: 0.985 }}
                 >
-                  <motion.div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: colors.bg, border: `1px solid ${colors.border}` }}
-                    whileHover={{ rotate: 6, scale: 1.06 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <Icon size={18} style={{ color: colors.color }} />
-                  </motion.div>
                   <div>
                     <div className="text-sm font-semibold font-sans" style={{ color: 'var(--text-primary)' }}>
                       {link.platform}
@@ -296,6 +288,14 @@ export function Contact({ social }: { social: SocialData }) {
                       {link.url.replace('mailto:', '').replace('https://', '')}
                     </div>
                   </div>
+                  <motion.div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                    style={{ background: colors.bg, border: `1px solid ${colors.border}` }}
+                    whileHover={{ rotate: 6, scale: 1.06 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Icon size={18} style={{ color: colors.color }} />
+                  </motion.div>
                 </motion.a>
               );
             })}

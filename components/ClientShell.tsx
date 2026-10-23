@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
+import { useState } from 'react';
 import { Preloader } from '@/components/Preloader';
 import { Navbar } from '@/components/layout/Navbar';
 import { Hero } from '@/components/sections/Hero';
@@ -25,14 +25,6 @@ interface ClientShellProps {
 
 export function ClientShell({ profile, projects, timeline, social }: ClientShellProps) {
   const [preloaderDone, setPreloaderDone] = useState(false);
-  const [visitorCount, setVisitorCount] = useState<number | undefined>(undefined);
-
-  useEffect(() => {
-    fetch('/api/visits', { method: 'POST' })
-      .then((r) => r.json())
-      .then((d) => setVisitorCount(d.count))
-      .catch(() => {});
-  }, []);
 
   return (
     <>
@@ -49,7 +41,7 @@ export function ClientShell({ profile, projects, timeline, social }: ClientShell
             <Timeline entries={timeline} />
             <Contact social={social} />
           </main>
-          <Footer social={social} visitorCount={visitorCount} />
+          <Footer social={social} />
         </>
       )}
     </>

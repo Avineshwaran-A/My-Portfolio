@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown, MapPin, Clock } from 'lucide-react';
+import { MapPin, Clock } from 'lucide-react';
 import type { Profile } from '@/lib/types';
 
 interface HeroProps {
@@ -172,26 +172,6 @@ export function Hero({ profile }: HeroProps) {
         </div>
       </motion.div>
 
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
-        aria-hidden="true"
-      >
-        <motion.div
-          animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
-        >
-          <ArrowDown size={16} style={{ color: 'var(--text-muted)' }} />
-        </motion.div>
-        <span
-          className="text-[10px] font-mono tracking-widest uppercase"
-          style={{ color: 'var(--text-muted)' }}
-        >
-          Scroll
-        </span>
-      </motion.div>
     </section>
   );
 }
