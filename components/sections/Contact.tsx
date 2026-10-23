@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import Image from 'next/image';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Send, CheckCircle, XCircle, Github, Linkedin, Mail } from 'lucide-react';
+import { Send, CheckCircle, XCircle, Github, Linkedin, Mail, FileDown, Eye, X } from 'lucide-react';
 import { contactSchema, type ContactFormInput } from '@/lib/validators';
 import type { SocialData } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -199,6 +200,7 @@ function ContactForm() {
 
 export function Contact({ social }: { social: SocialData }) {
   const headingRef = useRef<HTMLDivElement>(null);
+  const resumeDialogRef = useRef<HTMLDialogElement>(null);
   const headingInView = useInView(headingRef, { once: true, margin: '-80px' });
 
   return (
@@ -229,7 +231,7 @@ export function Contact({ social }: { social: SocialData }) {
             animate={headingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Whether it&apos;s a project, internship, collaboration, or just a conversation about OS theory — my inbox is open.
+            Whether it&apos;s a project, internship or discuss about something new — my inbox is open.
           </motion.p>
         </div>
 
@@ -299,9 +301,85 @@ export function Contact({ social }: { social: SocialData }) {
                 </motion.a>
               );
             })}
+            <motion.button
+              type="button"
+              onClick={() => resumeDialogRef.current?.showModal()}
+              aria-label="View resume"
+              className="flex items-center justify-between gap-4 p-4 rounded-lg nature-panel group"
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: social.links.length * 0.07 + 0.15, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              whileHover={{
+                scale: 1.015,
+                boxShadow: '0 8px 28px rgba(47,107,79,0.18)',
+              }}
+              whileTap={{ scale: 0.985 }}
+            >
+              <div>
+                <div className="text-sm font-semibold font-sans" style={{ color: 'var(--text-primary)' }}>
+                  Resume
+                </div>
+                <div className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
+                  View PDF
+                </div>
+              </div>
+              <motion.div
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{
+                  background: 'rgba(47,107,79,0.1)',
+                  border: '1px solid rgba(47,107,79,0.28)',
+                  color: '#2f6b4f',
+                }}
+                whileHover={{ rotate: 6, scale: 1.06 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Eye size={18} />
+              </motion.div>
+            </motion.button>
           </motion.div>
         </div>
       </div>
+      <dialog
+        ref={resumeDialogRef}
+        aria-labelledby="resume-dialog-title"
+        className="fixed inset-0 m-auto h-[90dvh] w-[min(900px,94vw)] max-w-none overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--bg-panel)] p-0 text-[var(--text-primary)] shadow-2xl backdrop:bg-black/70"
+      >
+        <div className="flex h-full min-h-0 flex-col p-4 sm:p-6">
+          <div className="mb-3 flex items-center justify-between gap-4">
+            <h2 id="resume-dialog-title" className="font-sans text-lg font-semibold">
+              Resume
+            </h2>
+            <button
+              type="button"
+              onClick={() => resumeDialogRef.current?.close()}
+              aria-label="Close resume preview"
+              className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--border)] text-[var(--text-muted)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              <X size={18} />
+            </button>
+          </div>
+          <div className="min-h-0 flex-1 overflow-auto rounded-md border border-[var(--border)] bg-white">
+            <Image
+              src="/Avineshwaran_resume_preview.png"
+              alt="Preview of Avineshwaran's resume"
+              width={1158}
+              height={1638}
+              sizes="(max-width: 768px) 90vw, 850px"
+              className="block h-auto w-full"
+            />
+          </div>
+          <a
+            href="/Avineshwaran_resume.pdf"
+            download
+            className="mt-4 inline-flex min-h-11 items-center justify-center gap-2 self-center rounded-lg px-6 py-3 text-sm font-medium transition-colors"
+            style={{ background: 'var(--accent)', color: '#f4f8f2' }}
+          >
+            <FileDown size={16} />
+            Download Resume
+          </a>
+        </div>
+      </dialog>
     </section>
   );
 }
